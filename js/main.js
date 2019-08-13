@@ -218,3 +218,11 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+/* Registering service Workers*/
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./js/sw.js").catch(function(err) {
+    console.log(err);
+  });
+}
