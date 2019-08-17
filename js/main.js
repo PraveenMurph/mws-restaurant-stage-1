@@ -222,7 +222,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 /* Registering service Workers*/
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./js/sw.js").catch(function(err) {
-    console.log(err);
-  });
+  navigator.serviceWorker
+    .register("./sw.js")
+    .then(console.log("Service Worker Registered!"))
+    .catch(function(err) {
+      console.log(err);
+    });
 }
