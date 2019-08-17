@@ -127,7 +127,7 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
+  /*width: 100%;  Removed to increase responsiveness as suggested by reviewer*/
   height: 100%; /* changed from fixed 50px to %scaling */
   background-color: #3397db;
   align-items: center;
@@ -159,9 +159,14 @@ nav h1 a {
   margin: 5px, 5px, 5px, 5px;
   padding: 30px 15px 60px;
   text-align: center;
-  display: grid;
+  /*display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
+  Removing grid properties and replacing with flex
+  to make it more responsive as suggested by reviewer */
+
+  display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -233,8 +238,11 @@ nav h1 a {
 
 .inside #footer {
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  /*position: absolute;
+  Removed absolute position to prevent horizontal
+  scrolling*/
+  position: relative;
+  width: auto;
 }
 
 .inside #map {
@@ -329,8 +337,8 @@ nav h1 a {
 
   .inside #footer {
     bottom: 0;
-    position: absolute;
-    width: 100%;
+    position: relative; /*changed from fixed to relative to prevent scrolling*/
+    width: auto;
   }
 
   .inside #maincontent {
@@ -352,6 +360,12 @@ nav h1 a {
   #reviews-container {
     width: 70%;
     margin: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #reviews-container {
+    width: 40%;
   }
 }
 
